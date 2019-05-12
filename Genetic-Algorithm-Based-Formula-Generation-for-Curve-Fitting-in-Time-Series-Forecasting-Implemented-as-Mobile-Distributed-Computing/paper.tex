@@ -56,7 +56,7 @@ Financial time series forecasting is an area of high researchers interest \cite{
 
 \subsection{Genetic Algorithms} \label{Genetic Algorithms}
 
-Genetic algorithms are metaheuristic for global optimization inspired by the natural processes in the biological evolution. Genetic algorithms are population based and they are subset of a larger class algorithms called evolutionary algorithms. Searching for a solution with genetic algorithms is based on three general operations - selection, crossover and mutation applied over population with individuals. Each individual is a vector into the solutions space. 
+Genetic algorithms are metaheuristic for global optimization inspired by the natural processes in the biological evolution. Genetic algorithms are population based \cite{mirjalili01} and they are subset of a larger class algorithms called evolutionary algorithms \cite{liu01}. Searching for a solution with genetic algorithms is based on three general operations - selection, crossover and mutation applied over population with individuals. Each individual is a vector into the solutions space. 
 
 Solving a problem starts with proper encoding of the individuals. There are many different encoding possibilities like binary encoding, integer numbers encoding, real numbers encoding, permutation encoding and etc. One less popular encoding is the expression tree encoding. In this case the individuals are represented with tree as data structure. Each node of the tree is a mathematical operation, on each leaf of the tree is an expression operand. 
 
@@ -69,6 +69,8 @@ Mutation operation gives to the algorithm exploitation capabilities and it is al
 After creation of the new generation each individual is evaluated and fitness value is assigned. The individuals from the old generation and the new generation are sorted according their fitness values and second half of the list is removed from the population. The fitness function used for individuals evaluation is extremely problem dependent. 
 
 Genetic algorithms have a group of parameters like - population size (usually estimated experimentally), crossover rate (in most cases 0.95 is advisable), mutation rate (in most cases 0.1 or 0.05 is advisable), elitism flag and etc. There is no general theory about population size and because of this the only applicable way for estimation of this parameters is by trying different possibilities. The crossover rate shows the chance a child to be produced by exchanging parts of the parents. When this parameter is less than one it means that there would be chances some parents to skip crossover procedure and to bypass directly to mutation procedure. Mutation rate shows the chance of every single element in the particular individual to be changed. When the mutation rate is very low few neighboring solutions are checked and the chances to approach global optimum are lower. 
+
+The organization of genetic algorithms computation by presence of population and operators applied over this population makes genetic algorithms perfect for parallel computations \cite{cheng01}. In distributed computing system genetic algorithm global population is used (client-server architecture) and many local sub-populations are evolved without real need for information exchange between territorial separated computers. 
 
 \subsection{Distributed Computing} \label{Distributed Computing}
 
@@ -85,6 +87,8 @@ Last decade was marked with huge progress of mobile devices and communications, 
 There are different ways in which arithmetic expressions can be presented into the computer memory. One of the most used representations is an expression tree. Such representation is convenient in many cases, but for the current research arithmetic expressions are encoded as simple text strings. 
 
 \section{Experiments} \label{Experiments}
+
+Experiments are done as Android mobile application. On the client side Apache Commons Genetic Algorithms Framework \cite{apache01} is used. Mathematical expressions are presented and evaluated with Java build of mXparser \cite{gromada01} software library. On the server side PHP/MySQL based solution \cite{balabanov03} is responsible for synchronization and financial time series data supply. 
 
 \section{Conclusions} \label{Conclusions}
 
@@ -104,7 +108,6 @@ This work was funded by Velbazhd Software LLC.
 
 \bibitem{chen01} Chen, J., Boccelli, DL., \textbf{\textit{Real-time forecasting and visualization toolkit for multi-seasonal time series}}, Environmental Modelling \& Software, \textbf{105}, p. 244--256, 2018.
 
-
 \bibitem{mueen01} Mueen, A., Keogh, E., Zhu, Q., Cash, S., Westover, B., \textbf{\textit{Exact Discovery of Time Series Motifs}}, Proceedings of the SIAM International Conference on Data Mining, p. 473--484, 2009.
 
 \bibitem{aljarah01} Aljarah, I., Faris, H., Mirjalili, S., \textbf{\textit{Optimizing connection weights in neural networks using the whale optimization algorithm}}, Soft Computing, Springer Berlin Heidelberg, \textbf{22}(1), p. 1--15, 2016.
@@ -113,6 +116,12 @@ This work was funded by Velbazhd Software LLC.
 
 \bibitem{kapanova01} Kapanova, K., Dimov, I., Sellier, J.M., \textbf{\textit{A genetic approach to automatic neural network architecture optimization}}, Neural Computing and Applications, Springer London, \textbf{29}(5), p. 1481--1492, 2016.
 
+\bibitem{mirjalili01} Mirjalili S., \textbf{\textit{Genetic Algorithm}}, Evolutionary Algorithms and Neural Networks. Studies in Computational Intelligence, Springer, Cham, \textbf{780}, p. 43--55, 2019.
+
+\bibitem{liu01} Liu, J., Abbass, H.A., Tan, K.C., \textbf{\textit{Evolutionary Computation}}, Evolutionary Computation and Complex Networks, Springer, Cham, p. 3--22, 2019.
+
+\bibitem{cheng01} Cheng, JR., Gen, M., \textbf{\textit{Accelerating genetic algorithms with GPU computing: A selective overview}}, Computers \& Industrial Engineering, Elsevier, \textbf{128}, p. 514--525, 2019.
+
 \bibitem{balabanov01} Balabanov, T., Genova, K., \textbf{\textit{Distributed System for Artificial Neural Networks Training Based on Mobile Devices}}, Proceedings of International Conference AUTOMATICS AND INFORMATICS, Federation of the Scientific Engineering Unions John Atanasoff Society of Automatics and Informatics, p. 49--52, 2016.
 
 \bibitem{godfrey01} Godfrey, B., \textbf{\textit{A primer on distributed computing}}, http://billpg.com/bacchae-co-uk/docs/dist.html Last visited: 01-May-2019 16:07:00 EET, 2006.
@@ -120,6 +129,12 @@ This work was funded by Velbazhd Software LLC.
 \bibitem{andrews01} Andrews, G., \textbf{\textit{Foundations of Multithreaded, Parallel, and Distributed Programming}}, Addison–Wesley, p. 291--292, 2000.
 
 \bibitem{balabanov02} Balabanov, T., Zankinski, I., Barova, M., \textbf{\textit{Strategy for Individuals Distribution by Incident Nodes Participation in Star Topology of Distributed Evolutionary Algorithms}}, Cybernetics and Information Technologies, \textbf{16}(1), p. 80--88, 2016.
+
+\bibitem{apache01} \textbf{\textit{Apache Commons Genetic Algorithms Framework}}, http://commons.apache.org/proper/commons-math/userguide/genetics.html Last visited: 12-May-2019 12:36:56 EET, 2016.
+
+\bibitem{gromada01} Gromada, M., \textbf{\textit{mXparser - Math Expression Evaluator / Parser - Library}}, http://www.mathparser.org/ Last visited: 12-May-2019 12:44:12 EET.
+
+\bibitem{balabanov03} Balabanov, T., \textbf{\textit{Distributed System for Time Series Prediction with Evolutionary Algorithms and Artificial Neural Networks}}, Abstracts of Dissertations - Institute of Information and Communication Technologies - Bulgarian Academy of Sciences, \textbf{6}, 2017.
 
 \bibitem{alexandrov01} Alexandrov, A., \textbf{\textit{Comparative analysis of IEEE 802.15.4 based communication protocols used in wireless intelligent sensor systems}}, Proceedings of the International conference RAM, p. 51--54, 2014.
 
