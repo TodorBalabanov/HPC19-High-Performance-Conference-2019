@@ -108,7 +108,9 @@ end
 \end{lstlisting}
 \FloatBarrier
 
-For the genetic algorithm a classical implementation is proposed (Listing \ref{lst01}) as described in \cite{baeck01}.
+For the local genetic algorithm a classical implementation is proposed (Listing \ref{lst01}) as described in \cite{baeck01}. Each new individual in the local genetic algorithm population is tested by calculation of the proposed formula and mean square of the error with the real life values. If the calculated values of the formula matches perfectly with the real life values the total mean square value would be zero. This means that better individuals have lower values for their fitness.
+
+The best found local individuals are reported to the centralized server and become part of a global genetic algorithm population. When there is a connection of a new mobile device a subset of the global genetic population is sent to the device in order new local population to be established and evolved.
 
 \section{Experiments} \label{Experiments}
 
@@ -116,7 +118,7 @@ Experiments are done as Android mobile application. On the client side Apache Co
 
 \begin{figure}[b]
 \sidecaption
-\includegraphics[scale=0.12]{fig01.png}
+\includegraphics[scale=0.15]{fig01.png}
 \caption{EUR/USD rate for two months.}
 \label{fig01}
 \end{figure}
@@ -150,6 +152,8 @@ price = 0.485 + 0.01 * sin(day - 2.3) + log(day / 10000)
 \end{equation}
 
 The equation has few terms with sine and logarithmic functions used. The input of the equation is time value (number of days). The output of the equation is a prediction of the EUR/USD rate. 
+
+Even that initial results are promising much more extensive operation of the entire distributed computing system should be executed in order much better results to be achieved. 
 
 \section{Conclusions} \label{Conclusions}
 
