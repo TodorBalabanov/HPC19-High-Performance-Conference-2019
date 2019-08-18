@@ -77,8 +77,8 @@
 		\item Linear regression can be used for trend estimation
 		\item Lagrange polynomial as more complex generalization
 	\end{itemize}
-	\item {\color{red} Infinite number of curves can satisfy the condition to pass across finite number of points in two-dimensional space}
 \end{itemize}
+{\color{red} Infinite number of curves can satisfy the condition to pass across finite number of points in two-dimensional space}
 \end{frame}
 
 \subsection{Evolutionary Computing}
@@ -109,7 +109,78 @@
 \end{itemize}
 \end{frame}
 
+\subsection{Distributed Computing}
+
+\begin{frame}
+\frametitle{Distribution of Computations}
+\begin{itemize}
+	\item A computational organization in a system where components are located on different networked computers
+	\item Computers communicates and coordinates their activities by passing messages between each other
+	\item It is remarkable with:
+	\begin{itemize}
+		\item Concurrency of components
+		\item Lack of a global clock
+		\item Independent failure of components
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{How Distributed Computing is Done}
+\begin{itemize}
+	\item A problem is divided into many tasks
+	\item Each task is solved by one or more computers
+	\item Computers communicate with each other via message passing
+\end{itemize}
+{\color{red} Distributed computing is generally used for solving a large computational problems}
+\end{frame}
+
+\section{Proposed Solution}
+
+\begin{frame}
+\center \huge{Proposed Solution}
+\end{frame}
+
+\subsection{Donated Distributed Computing}
+
+\begin{frame}
+\frametitle{Donated Calculating Power}
+\begin{itemize}
+	\item Users donate their computational resources
+	\item In most cases computations are organized as screen-saver applications
+	\item It is mainly used for low budget projects usually in society help
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Mobile Distributed Computing}
+\begin{itemize}
+	\item Modern mobile devices have significant computation capabilities
+	\item Most of the mobile devices are operating 24x7
+	\item Active wallpaper is used instead screen-saver
+\end{itemize}
+Widgets are also an option, which can extend the idea to human-computer based distributed computing
+\end{frame}
+
 \section{Experiments and Results}
+
+\begin{frame}
+\center \huge{Experiments and Results}
+\end{frame}
+
+\subsection{Experimental Platform}
+
+\begin{frame}
+\frametitle{Software Solution}
+\begin{itemize}
+	\item Android mobile application on the client side
+	\item Apache Commons Genetic Algorithms Framework is used for evolutionary optimization
+	\item Mathematical expressions are presented and evaluated with mXparser library
+	\item PHP/MySQL custom solution is used on the server side
+\end{itemize}
+\end{frame}
+
+\subsection{Optimization Parameters}
 
 \begin{frame}
 \frametitle{Genetic Algorithm Parameters}
@@ -140,6 +211,42 @@
 \begin{frame}
 \center \huge{Conclusions}
 \end{frame}
+
+\subsection{Advantages and Disadvantages}
+
+\begin{frame}
+\frametitle{Advantages}
+\begin{itemize}
+	\item Expressions evolution with genetic algorithms can be a promising approach for financial time series forecasting
+	\item The nature of genetic algorithms allows extremely high degree of parallel computations
+	\item Many sub-optimal solutions can be provided
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Disadvantages}
+\begin{itemize}
+	\item Formulas generation is time consuming process
+	\item Financial time series are not constant they are evolving
+	\begin{itemize}
+		\item Need of recalculation with the time passing
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Future Research}
+\begin{itemize}
+	\item Genetic algorithms to be combined with other optimization methods like:
+	\begin{itemize}
+		\item Particle swarm optimization
+		\item Simulated annealing
+		\item Tabu search
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection{Discussion}
 
 \begin{frame}
 \frametitle{Questions and Answers}
