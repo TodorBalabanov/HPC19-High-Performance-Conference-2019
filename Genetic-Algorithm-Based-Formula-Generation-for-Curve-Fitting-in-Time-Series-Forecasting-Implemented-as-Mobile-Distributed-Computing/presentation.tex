@@ -162,6 +162,57 @@
 Widgets are also an option, which can extend the idea to human-computer based distributed computing
 \end{frame}
 
+\subsection{Expressions Evaluation}
+
+\begin{frame}
+\frametitle{Structures and Operators}
+\begin{itemize}
+	\item Simple text representation of mathematical expressions
+	\item Single point cut crossover
+	\item Random change of mathematical operator mutation
+	\item Random change of mathematical operand mutation
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Optimization Procedure}
+\small
+begin \\
+~  t = 0; \\
+~  initialize P(t); \\
+~  evaluate structures in P(t); \\
+~  while termination condition not satisfied do \\
+~  begin \\
+~~    t = t + 1; \\
+~~    select\_repro C(t) from P(t-1); \\
+~~    recombine and mutate structures in C(t) \\
+~~    forming C'(t); \\
+~~    evaluate structures in C'(t); \\
+~~    select\_replace P(t) from C'(t) and P(t-1); \\
+~  end \\
+end \\
+\end{frame}
+
+\begin{frame}
+\frametitle{Solutions Fitness}
+\begin{itemize}
+	\item Invalid formulas are ignored
+	\item Calculation of the valid formula 
+	\item Fitness is the mean square of the error with the real life values
+\end{itemize}
+\end{frame}
+
+\subsection{Client-Server Communication}
+
+\begin{frame}
+\frametitle{Keeping Solutions}
+\begin{itemize}
+	\item Best found local solutions are reported to the remote server
+	\item On the remote server global population is kept
+	\item When new mobile client is connected subset of the global population is sent as new local population
+\end{itemize}
+\end{frame}
+
 \section{Experiments and Results}
 
 \begin{frame}
